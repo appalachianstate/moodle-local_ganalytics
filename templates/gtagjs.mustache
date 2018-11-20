@@ -1,0 +1,44 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_ganalytics/script
+
+    Renders an HTML <script> element intended for the page's head
+    section.
+
+    Example context (array):
+    [
+        "propertyid": "PROPERTY-ID",
+        "dimensions": [ [ 'index' => 1, 'value' => 'student' ], [ 'index' => 2, 'value' => 'ENG101-002' ] ]
+        "metrics": [ [ 'index' => 1, 'value' => 10 ], [ 'index' => 2, 'value' => 8 ] ]
+    ]
+}}
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{propertyid}}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '{{propertyid}}', {
+      'custom_map': {
+        {{# dimensions }}'dimension{{index}}':'ga_dimension{{index}}',{{/ dimensions }}{{# metrics }}'metric{{index}}':'ga_metric{{index}}',{{/ metrics }}
+    }});
+    gtag('event', 'custom_event', {
+      {{# dimensions }}'ga_dimension{{index}}':'{{value}}', {{/ dimensions }}{{# metrics }}'ga_metric{{index}}':{{value}}, {{/ metrics }}
+    });
+  </script>
