@@ -48,10 +48,14 @@
 
 
             if ($COURSE->id == SITEID) {
-                return 'site';
+                return get_string('site');
             }
 
-            return \coursecat::get($COURSE->category)->name;
+            try {
+                return \coursecat::get($COURSE->category, MUST_EXIST, true)->name;
+            } catch (\Throwable $exc) {
+                return '';
+            }
 
         }
 

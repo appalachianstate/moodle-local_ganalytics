@@ -45,14 +45,20 @@
             global $USER, $COURSE;
 
 
+            $guestrolestr = get_string('guest');
+
             if (empty($USER->access) || empty($USER->access['ra'])) {
                 // Unauthenticated
-                return 'guest';
+                return $guestrolestr;
             }
 
-            $roles = self::get_roles_from_cache();
-            if (!$roles) {
-                return 'guest';
+            try {
+                $roles = self::get_roles_from_cache();
+                if (!$roles) {
+                    return $guestrolestr;
+                }
+            } catch (\Throwable $exc) {
+                return $guestrolestr;
             }
 
             // Use the current course context path to find the
@@ -64,7 +70,7 @@
 
             $roleids = array_keys($USER->access['ra'][$context->path]);
             if (empty($roleids) || empty($roles[$roleids[0]])) {
-                return 'guest';
+                return $guestrolestr;
             }
 
             return $roles[$roleids[0]]->shortname;
