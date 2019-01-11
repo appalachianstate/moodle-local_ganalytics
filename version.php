@@ -29,9 +29,10 @@
 
     $plugin             = new stdClass();
 
-    $plugin->version    = 2018052000;
+    $plugin->version    = 2018052001;
     $plugin->requires   = 2017111300;
-    $plugin->release    = "0.0.1 (Build 2018080800)";
+    $plugin->release    = "0.0.2 (Build 2019011100)";
     $plugin->component  = 'local_ganalytics';
     $plugin->cron       = 0;
     $plugin->maturity   = MATURITY_STABLE;
+
