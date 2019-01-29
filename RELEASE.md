@@ -1,5 +1,8 @@
 ## Google Analytics local plugin for Moodle
 
+#### 0.0.4 (Build 2019012900)
+* Moodle 3.6 compatibility, remove deprecated coursecat
+
 #### 0.0.3 (Build 2019012900)
 * Privacy API change, represent user data sent to external location
 * Changes for Moodle coding guidelines
