@@ -25,25 +25,41 @@
      */
 
     namespace local_ganalytics\privacy;
-    use core_privacy\local\metadata\null_provider;
+    use core_privacy\local\metadata\collection;
 
     defined('MOODLE_INTERNAL') || die();
 
 
-    class provider implements null_provider
+    /**
+     * Metadata provider for Moodle Privacy API
+     *
+     * @package     local_ganalytics
+     * @copyright   (c) 2018 Appalachian State Universtiy, Boone, NC
+     * @license     GNU General Public License version 3
+     */
+    class provider implements \core_privacy\local\metadata\provider, \core_privacy\local\request\data_provider
     {
-        use \core_privacy\local\legacy_polyfill;
-
 
         /**
-         * Get the language string identifier with the component's language
-         * file to explain why this plugin stores no data.
+         * Returns meta data about this system.
          *
-         * @return  string
+         * @param   collection     $items The initialised collection to add items to.
+         * @return  collection     A listing of user data stored through this system.
          */
-        public static function _get_reason()
+        public static function get_metadata(collection $items) : collection
         {
-            return 'privacy:metadata';
+
+            $items->add_external_location_link(
+                get_string('privacy:externlink', 'local_ganalytics'),
+                [ 'userrole' => 'privacy:metadata:userrole',
+                  'coursename' => 'privacy:metadata:coursename',
+                  'coursesize' => 'privacy:metadata:coursesize',
+                  'coursecat' => 'privacy:metadata:coursecat' ],
+                'privacy:metadata'
+            );
+
+            return $items;
+
         }
 
     }

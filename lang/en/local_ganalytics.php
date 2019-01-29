@@ -27,7 +27,14 @@
     defined('MOODLE_INTERNAL') || die();
 
     $string['pluginname']               = 'Google Analytics';
-    $string['privacy:metadata']         = 'This plugin does not store any personal data.';
+
+    $string['privacy:externlink']           = 'Google Analytics';
+    $string['privacy:metadata']             = 'To improve reporting user data is sent to an external analytics service.';
+    $string['privacy:metadata:userrole']    = 'User role in course is sent as a custom reporting dimension.';
+    $string['privacy:metadata:coursename']  = 'Course name is sent as a custom reporting dimension.';
+    $string['privacy:metadata:coursesize']  = 'Course enrollment size (coded) is sent as a custom reporting dimension.';
+    $string['privacy:metadata:coursecat']   = 'Course category name is sent as a custom reporting dimension.';
+
     $string['cachedef_session']         = 'GAnalytics session cache';
     $string['cachedef_global']          = 'GAnalytics global cache';
 
