@@ -1,5 +1,8 @@
 ## Google Analytics local plugin for Moodle
 
+#### 0.0.3-34 (Build 2019012900)
+* Branch for Moodle 3.4/3.5 compatibility
+
 #### 0.0.3 (Build 2019012900)
 * Privacy API change, represent user data sent to external location
 * Changes for Moodle coding guidelines
