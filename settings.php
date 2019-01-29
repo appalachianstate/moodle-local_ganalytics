@@ -36,36 +36,31 @@
 
     if ($hassiteconfig) {
 
-        $pluginname = 'local_ganalytics';
-
-        $settings = new admin_settingpage($pluginname, get_string('settingspage', $pluginname));
+        $settings = new admin_settingpage('local_ganalytics', get_string('settingspage', 'local_ganalytics'));
         $ADMIN->add('localplugins', $settings);
 
-        $field = "property";
-        $adminSetting = new admin_setting_heading(
-            "{$pluginname}/{$field}",
-            get_string("{$field}_lbl",  $pluginname),
-            get_string("{$field}_desc", $pluginname));
-        $settings->add($adminSetting);
-        unset($adminSetting);
+        $adminsetting = new admin_setting_heading(
+            'local_ganalytics/property',
+            get_string('property_lbl',  'local_ganalytics'),
+            get_string('property_desc', 'local_ganalytics'));
+        $settings->add($adminsetting);
+        unset($adminsetting);
 
-        $field = "propertyid";
-        $adminSetting = new admin_setting_configtext_with_maxlength(
-            "{$pluginname}/{$field}",
-            get_string("{$field}_lbl",  $pluginname),
-            get_string("{$field}_desc", $pluginname),
+        $adminsetting = new admin_setting_configtext_with_maxlength(
+            'local_ganalytics/propertyid',
+            get_string('propertyid_lbl',  'local_ganalytics'),
+            get_string('propertyid_desc', 'local_ganalytics'),
             '', PARAM_ALPHANUMEXT, 20, 20);
-        $settings->add($adminSetting);
-        unset($adminSetting);
+        $settings->add($adminsetting);
+        unset($adminsetting);
 
-        $field = "template";
-        $adminSetting = new admin_setting_configselect(
-            "{$pluginname}/{$field}",
-            get_string("{$field}_lbl",  $pluginname),
-            get_string("{$field}_desc", $pluginname),
+        $adminsetting = new admin_setting_configselect(
+            'local_ganalytics/template',
+            get_string('template_lbl',  'local_ganalytics'),
+            get_string('template_desc', 'local_ganalytics'),
             'analyticsjs', array('analyticsjs' => 'Universal Analytics (analyticsjs)', 'gtagjs' => 'Global Site Tag (gtagjs)'));
-        $settings->add($adminSetting);
-        unset($adminSetting);
+        $settings->add($adminsetting);
+        unset($adminsetting);
 
         $zerototwenty = [
              0 => '0',   1 => '1',   2 => '2',   3 => '3',   4 => '4',
@@ -74,22 +69,20 @@
             15 => '15', 16 => '16', 17 => '17', 18 => '18', 19 => '19',
             20 => '20' ];
 
-        $field = "dimensioncount";
-        $adminSetting = new admin_setting_configselect(
-            "{$pluginname}/{$field}",
-            get_string("{$field}_lbl",  $pluginname),
-            get_string("{$field}_desc", $pluginname),
+        $adminsetting = new admin_setting_configselect(
+            'local_ganalytics/dimensioncount',
+            get_string('dimensioncount_lbl',  'local_ganalytics'),
+            get_string('dimensioncount_desc', 'local_ganalytics'),
             '0', $zerototwenty);
-        $settings->add($adminSetting);
-        unset($adminSetting);
+        $settings->add($adminsetting);
+        unset($adminsetting);
 
-        $field = "metriccount";
-        $adminSetting = new admin_setting_configselect(
-            "{$pluginname}/{$field}",
-            get_string("{$field}_lbl",  $pluginname),
-            get_string("{$field}_desc", $pluginname),
+        $adminsetting = new admin_setting_configselect(
+            'local_ganalytics/metriccount',
+            get_string('metriccount_lbl',  'local_ganalytics'),
+            get_string('metriccount_desc', 'local_ganalytics'),
             '0', $zerototwenty);
-        $settings->add($adminSetting);
-        unset($adminSetting);
+        $settings->add($adminsetting);
+        unset($adminsetting);
 
     }
