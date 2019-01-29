@@ -27,8 +27,6 @@ namespace local_ganalytics\dimension;
 
 defined('MOODLE_INTERNAL') || die();
 
-require_once("{$CFG->libdir}/coursecatlib.php");
-
 
 /**
  * Custom dimension for Google Analytics in index slot 4
@@ -54,7 +52,7 @@ class custom_dimension_4 implements custom_dimension
         }
 
         try {
-            return \coursecat::get($COURSE->category, MUST_EXIST, true)->name;
+            return \core_course_category::get($COURSE->category, MUST_EXIST, true)->name;
         } catch (\Throwable $exc) {
             return '';
         }
