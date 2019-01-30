@@ -2,7 +2,7 @@
 
 ### Important! If you plan to use the custom dimension/metric feature...
 
-**You should be more than just familiar with Google Analytics, its configuration, and reporting before you install this plugin. Neither this plugin nor its documentation will not provide information or tutorials on using or configuring Google Analytics.**
+**You should be more than just familiar with Google Analytics, its configuration, and reporting before you install this plugin. Neither this plugin nor its documentation will provide information or tutorials on using or configuring Google Analytics.**
 
 **If you have no use for custom dimensions or metrics, then you do not need this plugin; instead, place the standard Google generated code snippet in the `Site Administration->Appearance->Additional HTML->Within HEAD` setting.**
 

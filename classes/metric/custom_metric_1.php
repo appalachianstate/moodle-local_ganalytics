@@ -42,9 +42,10 @@ class custom_metric_1 implements custom_metric
      *
      * @return int The custom_metric_1 value
      */
-    public static function get_metric_value() : int
-    {
+    public static function get_metric_value() : int {
+
         return 0;
+
     }
 
 }

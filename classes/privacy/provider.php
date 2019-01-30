@@ -45,8 +45,7 @@ class provider implements \core_privacy\local\metadata\provider, \core_privacy\l
      * @param   collection     $items The initialised collection to add items to.
      * @return  collection     A listing of user data stored through this system.
      */
-    public static function get_metadata(collection $items) : collection
-    {
+    public static function get_metadata(collection $items) : collection {
 
         $items->add_external_location_link(
             get_string('privacy:externlink', 'local_ganalytics'),
