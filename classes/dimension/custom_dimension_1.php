@@ -42,10 +42,8 @@ class custom_dimension_1 implements custom_dimension
      *
      * @return string The custom_dimension_1 value
      */
-    public static function get_dimension_value() : string
-    {
+    public static function get_dimension_value() : string {
         global $USER, $COURSE;
-
 
         $guestrolestr = get_string('guest');
 
@@ -85,10 +83,8 @@ class custom_dimension_1 implements custom_dimension
      *
      * @return array
      */
-    private static function get_roles_from_cache()
-    {
+    private static function get_roles_from_cache() {
         global $DB;
-
 
         $cache = \cache::make('local_ganalytics', 'global');
         $roles = $cache->get('roles');

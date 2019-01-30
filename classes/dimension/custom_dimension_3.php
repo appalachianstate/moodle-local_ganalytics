@@ -37,8 +37,8 @@ defined('MOODLE_INTERNAL') || die();
 class custom_dimension_3 implements custom_dimension
 {
 
-    /*
-     * Range labels and their upper bound values.
+    /**
+     * @var array Range labels and their upper bound values.
      */
     const RANGES    = [ 'na' => 0,  'xs' => 10, 'sm' => 20,
                         'md' => 35, 'lg' => 50, 'xl' => -1 ];
@@ -49,10 +49,8 @@ class custom_dimension_3 implements custom_dimension
      *
      * @return string The custom_dimension_3 value
      */
-    public static function get_dimension_value() : string
-    {
+    public static function get_dimension_value() : string {
         global $COURSE, $DB;
-
 
         if ($COURSE->id == SITEID) {
             return 'na';

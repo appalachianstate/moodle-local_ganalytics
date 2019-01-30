@@ -20,12 +20,23 @@
     Renders an HTML <script> element intended for the page's head
     section.
 
-    Example context (array):
-    [
+    Classes required for JS:                                                                                                        
+    * none                                                                                                                          
+                                                                                                                                    
+    Data attributes required for JS:                                                                                                
+    * none                                                                                                                          
+                                                                                                                                    
+    Context variables required for this template:                                                                                   
+    * propertyid Google Analytics property identifier
+    * dimensions Array of custom dimension values, each item an assoc. array index => value
+    * metrics Array of custom metric values, each item an assoc. array index => value
+
+    Example context (json):
+    {
         "propertyid": "PROPERTY-ID",
-        "dimensions": [ [ 'index' => 1, 'value' => 'student' ], [ 'index' => 2, 'value' => 'ENG101-002' ] ]
-        "metrics": [ [ 'index' => 1, 'value' => 10 ], [ 'index' => 2, 'value' => 8 ] ]
-    ]
+        "dimensions": [ { "index":1, "value":"student" }, { "index":2, "value":"ENG101-002" } ],
+        "metrics": [ { "index":1, "value":10 }, { "index":2, "value":8 } ]
+    }
 }}
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id={{propertyid}}"></script>

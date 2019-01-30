@@ -31,21 +31,15 @@ defined('MOODLE_INTERNAL') || die();
  *
  * @return string Markup to be included in page's HTML head element
  */
-function local_ganalytics_before_standard_html_head() : string
-{
-    global $OUTPUT, $USER;
+function local_ganalytics_before_standard_html_head() : string {
+    global $OUTPUT;
 
-
-    // Exclude any admin user activity.
-    if (is_siteadmin()) {
-        return '';
-    }
-
-    // Get the config info, get out if missing.
+    // Get the config info, get out if missing, is admin user.
     $config = get_config('local_ganalytics');
-    if (empty($config->propertyid)) {
+    if (empty($config->propertyid) || is_siteadmin()) {
         return '';
     }
+
     if (empty($config->template)) {
         $config->template = 'analyticsjs';
     }

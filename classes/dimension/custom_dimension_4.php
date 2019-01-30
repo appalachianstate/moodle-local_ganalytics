@@ -42,10 +42,8 @@ class custom_dimension_4 implements custom_dimension
      *
      * @return string The custom_dimension_4 value
      */
-    public static function get_dimension_value() : string
-    {
+    public static function get_dimension_value() : string {
         global $COURSE;
-
 
         if ($COURSE->id == SITEID) {
             return get_string('site');
