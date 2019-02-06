@@ -33,6 +33,9 @@ $string['privacy:metadata:userrole']    = 'User role in course is sent as a cust
 $string['privacy:metadata:coursename']  = 'Course name is sent as a custom reporting dimension.';
 $string['privacy:metadata:coursesize']  = 'Course enrollment size (coded) is sent as a custom reporting dimension.';
 $string['privacy:metadata:coursecat']   = 'Course category name is sent as a custom reporting dimension.';
+$string['privacy:metadata:pagetype']    = 'Moodle page type is sent as a custom reporting dimension.';
+$string['privacy:metadata:module']      = 'Moodle module name is sent as a custom reporting dimension.';
+$string['privacy:metadata:instance']    = 'Module instance name is sent as a custom reporting dimension.';
 
 $string['cachedef_session']         = 'GAnalytics session cache';
 $string['cachedef_global']          = 'GAnalytics global cache';
