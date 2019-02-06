@@ -49,10 +49,15 @@ class provider implements \core_privacy\local\metadata\provider, \core_privacy\l
 
         $items->add_external_location_link(
             get_string('privacy:externlink', 'local_ganalytics'),
-            [ 'userrole' => 'privacy:metadata:userrole',
-              'coursename' => 'privacy:metadata:coursename',
-              'coursesize' => 'privacy:metadata:coursesize',
-              'coursecat' => 'privacy:metadata:coursecat' ],
+            [
+                'userrole'   => 'privacy:metadata:userrole',
+                'coursename' => 'privacy:metadata:coursename',
+                'coursesize' => 'privacy:metadata:coursesize',
+                'coursecat'  => 'privacy:metadata:coursecat',
+                'pagetype'   => 'privacy:metadata:pagetype',
+                'module'     => 'privacy:metadata:module',
+                'instance'   => 'privacy:metadata:instance',
+            ],
             'privacy:metadata'
         );
 
