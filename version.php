@@ -28,9 +28,9 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin             = new stdClass();
 
-$plugin->version    = 2018052062;
+$plugin->version    = 2018052063;
 $plugin->requires   = 2018120300;
-$plugin->release    = "0.0.4 (Build 2019012900)";
+$plugin->release    = "0.0.5 (Build 2021061700)";
 $plugin->component  = 'local_ganalytics';
 $plugin->cron       = 0;
 $plugin->maturity   = MATURITY_STABLE;

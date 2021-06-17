@@ -1,5 +1,10 @@
 ## Google Analytics local plugin for Moodle
 
+#### 0.0.5 (Build 2021061700)
+* Added three custom dimension class files (page type, module name, module instance)
+* Code style cosmetics
+* Fix gtagjs template
+
 #### 0.0.4 (Build 2019012900)
 * Moodle 3.6 compatibility, remove deprecated coursecat
 
