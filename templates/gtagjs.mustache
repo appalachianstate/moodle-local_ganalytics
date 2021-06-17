@@ -20,13 +20,13 @@
     Renders an HTML <script> element intended for the page's head
     section.
 
-    Classes required for JS:                                                                                                        
-    * none                                                                                                                          
-                                                                                                                                    
-    Data attributes required for JS:                                                                                                
-    * none                                                                                                                          
-                                                                                                                                    
-    Context variables required for this template:                                                                                   
+    Classes required for JS:
+    * none
+
+    Data attributes required for JS:
+    * none
+
+    Context variables required for this template:
     * propertyid Google Analytics property identifier
     * dimensions Array of custom dimension values, each item an assoc. array index => value
     * metrics Array of custom metric values, each item an assoc. array index => value
@@ -39,17 +39,13 @@
     }
 }}
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{propertyid}}"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', '{{propertyid}}', {
-      'custom_map': {
-        {{# dimensions }}'dimension{{index}}':'ga_dimension{{index}}',{{/ dimensions }}{{# metrics }}'metric{{index}}':'ga_metric{{index}}',{{/ metrics }}
-    }});
-    gtag('event', 'custom_event', {
-      {{# dimensions }}'ga_dimension{{index}}':'{{value}}', {{/ dimensions }}{{# metrics }}'ga_metric{{index}}':{{value}}, {{/ metrics }}
-    });
-  </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{propertyid}}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('set', {
+        {{# dimensions }}'dimension{{index}}':'{{value}}', {{/ dimensions }}{{# metrics }}'metric{{index}}':{{value}}, {{/ metrics }}
+      });
+      gtag('config', '{{propertyid}}');
+    </script>
