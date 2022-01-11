@@ -68,6 +68,10 @@ class custom_dimension_1 implements custom_dimension
                  ? \context_system::instance()
                  : \context_course::instance($COURSE->id);
 
+        if (!is_array($USER->access['ra']) || empty($context->path) ||
+            empty($USER->access['ra'][$context->path]) || !is_array($USER->access['ra'][$context->path])) {
+            return $guestrolestr;
+        }
         $roleids = array_keys($USER->access['ra'][$context->path]);
         if (empty($roleids) || empty($roles[$roleids[0]])) {
             return $guestrolestr;
